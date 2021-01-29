@@ -25,5 +25,3 @@ result in visually compressing the objects, making them stack ontop of each othe
 
 With more time I could learn how to either create a carousel tool myself, or make appropriate changes to the carousel 
 tools already created and used in this project.
-
-https://drive.google.com/file/d/1L_KVsapr-CDrjl18ET7IzexjsmNlVuBP/view?usp=sharing
