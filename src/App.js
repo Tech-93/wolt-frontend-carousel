@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react'
+import restaurantService from './services/restaurants'
+import RestaurantRenderer from './components/RestaurantRenderer'
+import './styles.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+
+const App = () => {
+
+
+    const [restaurants, setRestaurants] = useState([])
+
+    // fetches the data from local server, from the discovery_page.js and fills the restaurants list.
+    useEffect(()=> {
+        restaurantService.getAll().then(response => {
+            setRestaurants(response.data)
+        })
+    }, [])
+
+
+    console.log('restaurants', restaurants.length)
+    
+    // uses the imported component RestaurantRenderer with map function and stores it in a greater function which is passed to return statement.
+    const renderer = () => restaurants.map(section => <RestaurantRenderer key={section.title} section={section} /> )
+
+    return(
+        <div className="container" >
+            {renderer()}            
+        </div>
+    )
 }
 
-export default App;
+export default App

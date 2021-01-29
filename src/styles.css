@@ -1,0 +1,39 @@
+.card {
+    width: 250px;
+    height: 200px;
+    font-size: 30px;
+    margin: 0 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+
+
+.text {
+    margin: 0 15%; 
+}
+
+.title {
+    margin: 0 20px;
+    padding-bottom: 1%;
+    padding-top: 1%;
+}
+
+.status {
+    margin: 0 20%;
+    position: absolute;
+    bottom: 20% ;
+    color: white;
+    font-size:larger;
+    font-weight: bold;
+    
+}
+
+.carousel {
+    margin: 0 2.5%;
+    
+}
+
